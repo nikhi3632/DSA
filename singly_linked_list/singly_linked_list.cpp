@@ -266,7 +266,7 @@ int main()
     sll_traverse(head);
 
     int target1 = 10;
-    int idx1= sll_findIndex(head, target1);
+    int idx1 = sll_findIndex(head, target1);
     found_msg(idx1, target1);
 
     int target2 = 45;
