@@ -3,8 +3,9 @@
     ./singly_linked_list 
 */
 
-#include <unordered_map>
 #include <iostream>
+#include <unordered_map>
+#include <unordered_set>
 
 typedef struct Node
 {
@@ -110,6 +111,31 @@ node_t *sll_cloneLinkedList(node_t *head)
     }
 
     return newHead;
+}
+
+void sll_removeDuplicates(struct Node* head) // first occurence is preserved
+{
+    // Hash to store unique values
+    std::unordered_set<int> unique;
+ 
+    /* Pick elements one by one */
+    struct Node* curr = head;
+    struct Node* prev = NULL;
+    while (curr != NULL) 
+    {
+        // If current value is seen before
+        if (unique.find(curr->value) != unique.end()) 
+        {
+            prev->next = curr->next;
+            delete (curr);
+        }
+        else 
+        {
+            unique.insert(curr->value);
+            prev = curr;
+        }
+        curr = prev->next;
+    }
 }
 
 /* node_t** head represents a double pointer to node_t. 
@@ -273,6 +299,14 @@ int main()
     int idx2 = sll_findIndex(head, target2);
     found_msg(idx2, target2);
 
+    sll_traverse(head);
+
+    sll_insertAtIndex(&head, 20, 0);
+    sll_insertAtIndex(&head, 25, 5);
+    sll_insertAtIndex(&head, 10, 3);
+    sll_traverse(head);
+
+    sll_removeDuplicates(head);
     sll_traverse(head);
 
     return 0;
