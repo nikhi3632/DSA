@@ -126,7 +126,7 @@ node_t *sll_cloneLinkedList(node_t *head)
     return newHead;
 }
 
-void sll_removeDuplicates(struct Node* head) // first occurence is preserved
+void sll_removeDuplicates(node_t* head) // first occurence is preserved
 {
     // Hash to store unique values
     std::unordered_set<int> unique;
@@ -324,6 +324,7 @@ int main()
     sll_traverse(head);
 
     node_t *clonedList = sll_cloneLinkedList(head);
+    std::cout << "The Cloned List is :" << std::endl;
     sll_traverse(clonedList);
 
     sll_insertAtIndex(&head, 30, 0);
