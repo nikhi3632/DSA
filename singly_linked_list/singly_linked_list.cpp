@@ -151,6 +151,38 @@ void sll_removeDuplicates(struct Node* head) // first occurence is preserved
     }
 }
 
+bool sll_palindrome(node_t *head)
+{
+    node_t *current = head;
+    if (head == nullptr || head->next == nullptr)
+    {
+        return true;
+    }
+    std::stack<int>s;
+
+    while(current)
+    {
+        s.push(current->value);
+        current = current->next;
+    }
+
+    current = head;
+
+    while(!s.empty())
+    {
+        if(current->value != s.top())
+        {
+            return false;
+        }
+        else
+        {
+            s.pop();
+            current = current->next;
+        }
+    }
+    return true;
+}
+
 /* node_t** head represents a double pointer to node_t. 
 It means that head is a pointer variable that stores the memory address 
 of another pointer variable, which in turn points to a node_t type.
@@ -263,38 +295,6 @@ void sll_reverse(node_t **head)
 
     // Update the head pointer to the new head
     *head = prev;
-}
-
-bool sll_palindrome(node_t *head)
-{
-    node_t *current = head;
-    if (head == nullptr || head->next == nullptr)
-    {
-        return true;
-    }
-    std::stack<int>s;
-
-    while(current)
-    {
-        s.push(current->value);
-        current = current->next;
-    }
-
-    current = head;
-
-    while(!s.empty())
-    {
-        if(current->value != s.top())
-        {
-            return false;
-        }
-        else
-        {
-            s.pop();
-            current = current->next;
-        }
-    }
-    return true;
 }
 
 void sll_init(node_t **head)
