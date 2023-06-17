@@ -6,6 +6,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <unordered_set>
+#include <stack>
 
 typedef struct Node
 {
@@ -65,6 +66,18 @@ void found_msg(int indx, int elem)
     else
     {
         std::cout << "Element " << elem << " found at index: " << indx << std::endl;
+    }
+}
+
+void palindrome_msg(bool val)
+{
+    if(val)
+    {
+        std::cout << "The linked list is a palindrome" << std::endl;
+    }
+    else
+    {
+        std::cout << "The linked list is not a palindrome" << std::endl;
     }
 }
 
@@ -252,6 +265,38 @@ void sll_reverse(node_t **head)
     *head = prev;
 }
 
+bool sll_palindrome(node_t *head)
+{
+    node_t *current = head;
+    if (head == nullptr || head->next == nullptr)
+    {
+        return true;
+    }
+    std::stack<int>s;
+
+    while(current)
+    {
+        s.push(current->value);
+        current = current->next;
+    }
+
+    current = head;
+
+    while(!s.empty())
+    {
+        if(current->value != s.top())
+        {
+            return false;
+        }
+        else
+        {
+            s.pop();
+            current = current->next;
+        }
+    }
+    return true;
+}
+
 void sll_init(node_t **head)
 {
     node_t *tmp;
@@ -308,6 +353,17 @@ int main()
 
     sll_removeDuplicates(head);
     sll_traverse(head);
+
+    bool val1 = sll_palindrome(head);
+    palindrome_msg(val1);
+
+    sll_insertAtIndex(&head, 25, 4);
+    sll_insertAtIndex(&head, 10, 5);
+    sll_insertAtIndex(&head, 20, 6);
+    sll_traverse(head);
+
+    bool val2 = sll_palindrome(head);
+    palindrome_msg(val2);
 
     return 0;
 }
