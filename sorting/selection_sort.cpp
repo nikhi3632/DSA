@@ -23,6 +23,8 @@ void selection_sort(std::vector<int>&vec)
         int temp = vec[i];
         vec[i] = vec[min_index];
         vec[min_index] = temp;
+        std::cout << "-----------------------------------------------" <<std::endl;
+        print_vector(vec);
     }
 }
 
@@ -31,8 +33,8 @@ int main()
     std::vector<int>v;
     init_vector(v);
     print_vector(v);
-    std::cout << "Selection Sort: " << std::endl; // T.C = O(n^2), S.C = O(1);
     selection_sort(v);
+    std::cout << "Selection Sort: " << std::endl; // T.C = O(n^2), S.C = O(1);
     print_vector(v);
     return 0;
 }
