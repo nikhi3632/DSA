@@ -29,6 +29,9 @@ void bubble_sort(std::vector<int>&vec)
         {
             break;
         }
+
+        std::cout << "-----------------------------------------------" <<std::endl;
+        print_vector(vec);
     }
 }
 
@@ -37,8 +40,8 @@ int main()
     std::vector<int>v;
     init_vector(v);
     print_vector(v);
-    std::cout << "Bubble Sort: " << std::endl; // T.C = O(n^2), S.C = O(1);
     bubble_sort(v);
+    std::cout << "Bubble Sort: " << std::endl; // T.C = O(n^2), S.C = O(1);
     print_vector(v);
     return 0;
 }
