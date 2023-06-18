@@ -13,16 +13,16 @@ void insertion_sort(std::vector<int>&vec)
 
     for(int i = 1; i < n; i++)
     {
-        int j = i - 1;
+        int hole = i;
         int val = vec[i];
 
-        while(j >= 0 && val < vec[j])
+        while(hole > 0 && val < vec[hole-1])
         {
-            vec[j+1] = vec[j];
-            j = j - 1;
+            vec[hole] = vec[hole-1];
+            hole = hole - 1;
         }
 
-        vec[j+1] = val;
+        vec[hole] = val;
 
         std::cout << "-----------------------------------------------" <<std::endl;
         print_vector(vec);
