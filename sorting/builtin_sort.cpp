@@ -11,12 +11,11 @@ int main()
 {
     /*
         Time Complexity:
-        Average Case: O(nlogn)
-        Worst Case: O(n^2) (unlikely, but possible in rare cases)
-        Best Case: O(nlogn)
-
+            Average Case: O(nlogn)
+            Worst Case: O(n^2) (unlikely, but possible in rare cases)
+            Best Case: O(nlogn)
         Space Complexity:
-        O(log N) to O(N)
+            O(log N) to O(N)
     */
     std::vector<int>v;
     init_vector(v);
