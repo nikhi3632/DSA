@@ -31,13 +31,13 @@ int partition(std::vector<int>& vec, int low, int high)
             int temp = vec[i];
             vec[i] = vec[partitionIndex];
             vec[partitionIndex] = temp;
+            partitionIndex++;
         }
     }
 
-    // swap pivot with element at partition index.
     int tmp = vec[partitionIndex];
-    vec[partitionIndex] = pivot;
-    pivot = tmp;
+    vec[partitionIndex] = vec[high];
+    vec[high] = tmp;
 
     return partitionIndex;
 }
