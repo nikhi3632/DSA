@@ -53,7 +53,7 @@ void merge(std::vector<int>&vec, std::vector<int>&left_vec, std::vector<int>&rig
 
     while (i < left && j < right) 
     {
-        if (left_vec[i] < right_vec[j]) 
+        if (left_vec[i] <= right_vec[j]) 
         {
             vec[k] = left_vec[i];
             i++;
