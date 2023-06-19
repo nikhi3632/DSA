@@ -42,7 +42,6 @@ void merge(std::vector<int>&vec, std::vector<int>&left_vec, std::vector<int>&rig
 
         Finally, the merged and sorted elements are now stored in the original vector vec, 
         and the function returns.
-    
     */
 
     int i = 0;
