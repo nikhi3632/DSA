@@ -40,7 +40,7 @@ void merge(std::vector<int>&vec, std::vector<int>&left_vec, std::vector<int>&rig
         The second loop copies any remaining elements from right to vec, starting from index j 
         and continuing until the end of right. It increments both j and k after each copy.
 
-        Now, the merged and sorted elements are now stored in the original vector vec.
+        Now, the merged and sorted elements are stored in the original vector vec.
     */
 
     int i = 0;
