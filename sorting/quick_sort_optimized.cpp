@@ -89,7 +89,7 @@ int main()
     /* 
         Quick sort optimized version follows iterative approach and pivot randomization.
         A partition in a quick sort means that all the elements lesser than the pivot are 
-        to the left of it and all the elements greater than the pivotare to the right of it.
+        to the left of it and all the elements greater than the pivot are to the right of it.
         This iterative implementation uses an explicit stack to simulate the recursive calls, 
         avoiding the space overhead of the recursive approach. As a result, it achieves a 
         space complexity of O(logn) in the worst case and O(1) in the best and average cases.
