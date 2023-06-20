@@ -5,71 +5,45 @@
 
 #include <iostream>
 #include <vector>
-#include <cstdlib>  // For rand()
 #include "base_vector.hpp"
 
-// Function to partition the vector and return the partition index
-int partition(std::vector<int>& vec, int low, int high) 
+int partition(std::vector<int>& vec, int low, int high)
 {
     int pivot = vec[high]; // set pivot as last element conventionally.
     int partitionIndex = low; // set partition index as first index conventionally.
 
-    for(int i = low; i < high; i++)
+    for (int i = low; i < high; ++i)
     {
-        if(vec[i] <= pivot) // swap if element is lesser than pivot.
+        if (vec[i] <= pivot)
         {
             int temp = vec[i];
             vec[i] = vec[partitionIndex];
             vec[partitionIndex] = temp;
-            partitionIndex++;
+            ++partitionIndex;
         }
     }
 
-    // swap pivot with element at partition index.
-    int tmp = vec[partitionIndex];
+    int temp = vec[partitionIndex];
     vec[partitionIndex] = vec[high];
-    vec[high] = tmp;
+    vec[high] = temp;
 
     return partitionIndex;
 }
 
-int random_pivot_partition(std::vector<int>&vec, int low, int high)
+void process_quick_sort(std::vector<int>& vec, int low, int high)
 {
-    // Randomizing the pivot index in the given subpart of vector.
-    int random_pivot_index = low + rand()%(high-low+1);
-
-    // Swapping pivot value from high, so random pivot value will be taken as pivot while partitioning.
-    int temp = vec[high];
-    vec[high] = vec[random_pivot_index];
-    vec[random_pivot_index] = temp;
-
-    return partition(vec, low, high);
-}
-
-// Processing function for Quick Sort
-void process_quick_sort(std::vector<int>&vec, int low, int high) 
-{
-    if (low < high) 
+    if (low < high)
     {
-        // Partition the vector
-        int partitionIndex = random_pivot_partition(vec, low, high);
-
-        // Recursively sort the sub-vectors
+        int partitionIndex = partition(vec, low, high);
         process_quick_sort(vec, low, partitionIndex - 1);
         process_quick_sort(vec, partitionIndex + 1, high);
     }
 }
 
-// Randomized Quick Sort function
-void quick_sort(std::vector<int>&vec) 
+void quick_sort(std::vector<int>& vec)
 {
-    int n = vec.size();
-    if (n <= 1) 
-    {
-        return;
-    }
     int low = 0;
-    int high = n - 1;
+    int high = vec.size() - 1;
     process_quick_sort(vec, low, high);
 }
 
@@ -80,7 +54,13 @@ int main()
     print_vector(v);
     quick_sort(v);
     /* 
-        T.C = O(n^2) but it's mostly O(nlogn) due to randomized quick sort, S.C = O(n)
+        Quick sort follows divide and conquer approach.
+        This implementation of quick sort is recursive and is an in-place 
+        sorting algorithm as it does not required additional space.
+        The worst-case space complexity can be O(n) in scenarios where the recursion depth is equal to the 
+        number of elements in the input vector. However, the average case space complexity is O(logn).
+        Merge sort is stable i.e the relative order of records with the same key is preserved.
+        T.C = O(n^2), BestCase: O(nlogn), AverageCase: O(nlogn), WorstCase: O(n^2) and S.C = O(n) to O(logn).
     */
     std::cout << "Quick Sort: " << std::endl;
     print_vector(v);
