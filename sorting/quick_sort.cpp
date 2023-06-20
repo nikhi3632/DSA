@@ -19,7 +19,7 @@ int partition(std::vector<int>& vec, int low, int high)
             int temp = vec[i];
             vec[i] = vec[partitionIndex];
             vec[partitionIndex] = temp;
-            ++partitionIndex;
+            partitionIndex++;
         }
     }
 
