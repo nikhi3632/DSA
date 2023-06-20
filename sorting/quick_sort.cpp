@@ -5,8 +5,7 @@
 
 #include <iostream>
 #include <vector>
-#include <cstdlib>  // For rand() and srand()
-#include <ctime>    // For time()
+#include <cstdlib>  // For rand()
 #include "base_vector.hpp"
 
 // Function to partition the vector and return the partition index
