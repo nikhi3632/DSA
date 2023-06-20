@@ -55,12 +55,20 @@ int main()
     quick_sort(v);
     /* 
         Quick sort follows divide and conquer approach.
-        This implementation of quick sort is recursive and is an in-place 
-        sorting algorithm as it does not required additional space.
-        The worst-case space complexity can be O(n) in scenarios where the recursion depth is equal to the 
-        number of elements in the input vector. However, the average case space complexity is O(logn).
+        A partition in a quick sort means that all the elements lesser than the pivot are 
+        to the left of it and all the elements greater than the pivot are to the right of it.
+        The time complexity in BestCase: O(nlogn), AverageCase: O(nlogn), WorstCase: O(n^2.
+        This implementation of quick sort is recursive and is an in-place sorting algorithm.
+        An in-place algorithm means that the sorting is performed directly on the input data structure 
+        without requiring additional space proportional to the input size. In this case of Quick Sort, the 
+        sorting is performed by swapping elements within the input vector, without creating additional
+        data structures. Although Quick Sort does require auxiliary space for the call stack during
+        the recursive calls, this space usage is not considered when evaluating the in-place nature of the 
+        algorithm. The space complexity of Quick Sort is focused on the additional space required beyond the 
+        input size. The worst-case space complexity can be O(n) in scenarios where the recursion depth is equal
+        to the number of elements in the input vector. However, the average case space complexity is O(logn).
         Merge sort is stable i.e the relative order of records with the same key is preserved.
-        T.C = O(n^2), BestCase: O(nlogn), AverageCase: O(nlogn), WorstCase: O(n^2) and S.C = O(n) to O(logn).
+        T.C = O(n^2) and S.C = O(n).
     */
     std::cout << "Quick Sort: " << std::endl;
     print_vector(v);
