@@ -35,7 +35,7 @@ int partition(std::vector<int>& vec, int low, int high)
 
 int random_pivot_partition(std::vector<int>&vec, int low, int high)
 {
-    // Randomizing the pivot value in the given subpart of array.
+    // Randomizing the pivot index in the given subpart of array.
     int random_pivot_index = low + rand()%(high-low+1);
 
     // Swapping pivot value from high, so random pivot value will be taken as pivot while partitioning.
