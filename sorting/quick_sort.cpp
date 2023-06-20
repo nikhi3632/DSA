@@ -25,7 +25,7 @@ int partition(std::vector<int>& vec, int low, int high)
         }
     }
 
-    // swap if pivot with element at partition index.
+    // swap pivot with element at partition index.
     int tmp = vec[partitionIndex];
     vec[partitionIndex] = vec[high];
     vec[high] = tmp;
