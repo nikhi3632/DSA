@@ -57,7 +57,7 @@ int main()
         Quick sort follows divide and conquer approach.
         A partition in a quick sort means that all the elements lesser than the pivot are 
         to the left of it and all the elements greater than the pivot are to the right of it.
-        The time complexity in BestCase: O(nlogn), AverageCase: O(nlogn), WorstCase: O(n^2.
+        The time complexity in BestCase: O(nlogn), AverageCase: O(nlogn), WorstCase: O(n^2).
         This implementation of quick sort is recursive and is an in-place sorting algorithm.
         An in-place algorithm means that the sorting is performed directly on the input data structure 
         without requiring additional space proportional to the input size. In this case of Quick Sort, the 
