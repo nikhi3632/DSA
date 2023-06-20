@@ -57,21 +57,25 @@ void quick_sort_optimized(std::vector<int>&vec)
     }
     int low = 0;
     int high = n - 1;
-    std::stack<std::pair<int, int> > stack;
-    stack.push(std::make_pair(low, high));
+    /*
+        A stack of pairs of integers, std::stack<std::pair<int, int>> stack, is created. 
+        Each pair represents a sub-vector to be sorted, identified by its low and high indices.
+    */
+    std::stack<std::pair<int, int> > s;
+    s.push(std::make_pair(low, high));
 
-    while (!stack.empty()) 
+    while (!s.empty()) 
     {
-        low = stack.top().first;
-        high = stack.top().second;
-        stack.pop();
+        low = s.top().first;
+        high = s.top().second;
+        s.pop();
 
         if (low < high) 
         {
             int partitionIndex = random_pivot_partition(vec, low, high);
 
-            stack.push(std::make_pair(low, partitionIndex - 1));
-            stack.push(std::make_pair(partitionIndex + 1, high));
+            s.push(std::make_pair(low, partitionIndex - 1));
+            s.push(std::make_pair(partitionIndex + 1, high));
         }
     }
 }
@@ -84,9 +88,11 @@ int main()
     quick_sort_optimized(v);
     /* 
         Quick sort optimized version follows iterative approach and pivot randomization.
+        A partition in a quick sort means that all the elements lesser than the pivot are 
+        to the left of it and all the elements greater than the pivotare to the right of it.
         This iterative implementation uses an explicit stack to simulate the recursive calls, 
         avoiding the space overhead of the recursive approach. As a result, it achieves a 
-        space complexity of O(logn) in the worst case.
+        space complexity of O(logn) in the worst case and O(1) in the best and average cases.
         T.C = O(n^2) but it's mostly O(nlogn) due to randomized quick sort, S.C = O(logn).
     */
     std::cout << "Quick Sort Optimized: " << std::endl;
