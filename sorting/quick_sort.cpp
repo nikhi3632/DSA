@@ -67,7 +67,7 @@ int main()
         algorithm. The space complexity of Quick Sort is focused on the additional space required beyond the 
         input size. The worst-case space complexity can be O(n) in scenarios where the recursion depth is equal
         to the number of elements in the input vector. However, the average case space complexity is O(logn).
-        Merge sort is stable i.e the relative order of records with the same key is preserved.
+        Quick sort is un-stable i.e the relative order of records with the same key is not preserved.
         T.C = O(n^2) and S.C = O(n).
     */
     std::cout << "Quick Sort: " << std::endl;
