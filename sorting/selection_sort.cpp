@@ -10,6 +10,7 @@
 void selection_sort(std::vector<int>&vec)
 {
     int n = vec.size();
+    bool is_pass_required = false;
     for(int i = 0; i < n-1; i++)
     {
         int min_index = i;
@@ -18,7 +19,12 @@ void selection_sort(std::vector<int>&vec)
             if(vec[j] < vec[min_index])
             {
                 min_index = j;
+                is_pass_required = true;
             }
+        }
+        if(!is_pass_required)
+        {
+            break;
         }
         int temp = vec[i];
         vec[i] = vec[min_index];
