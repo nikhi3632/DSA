@@ -62,5 +62,6 @@ int main()
     std::cout<< "a:" << a << " " << "b:" << b << std::endl;
     xor_swap(a, b);
     std::cout<< "a:" << a << " " << "b:" << b << std::endl;
+    std::cout<< "XOR of natural numbers till " << 2*a + b/2 << " is " << compute_xor_n(2*a + b/2) << std::endl;
     return 0;
 }
