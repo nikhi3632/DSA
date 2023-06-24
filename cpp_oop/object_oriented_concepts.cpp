@@ -201,6 +201,21 @@ int main() {
         those Animal objects. It is an aggregation because the Zoo class holds a collection of Animal objects,
         but the lifetime of the Animal objects is managed externally.
 
+        Association: Association is a relationship between two classes where an object of one class is 
+        related to objects of another class. It represents a "has-a" relationship.
+        There is an example of association between the Person class and the Dog class. 
+        In the Person class, there is a private member variable dog of type const Dog&, 
+        which represents a reference to a Dog object. This member variable establishes an association 
+        between the Person class and the Dog class. It means that a Person object has a Dog object as 
+        part of its state. In the Person constructor, a Dog object is passed as an argument and assigned 
+        to the dog member variable, establishing the association between a Person and a Dog.
+        This association allows a Person object to interact with the associated Dog object through member 
+        functions like walkDog() or dog.getName(). The Person class can access and use the functionality 
+        provided by the Dog class through the associated Dog object. It's important to note that in this case,
+        the association is implemented using a reference (const Dog&) rather than object composition. 
+        This means that the Person class does not own or manage the lifetime of the Dog object. 
+        The responsibility for creating and destroying the Dog object lies outside the Person class.
+
         The Dog objects dog1 and dog2 are regular objects with automatic storage duration. 
         When the program execution reaches the end of the main function, the destructors for 
         dog1 and dog2 are automatically invoked in reverse order of their creation.
