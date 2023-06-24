@@ -138,10 +138,12 @@ int main() {
         dog object dog1 as a member.
         zoo: An object of the Zoo class representing a zoo. It contains a collection of animal objects.
 
-        Inheritance: The Dog class inherits from the Animal class using the 
+        Inheritance: 
+        The Dog class inherits from the Animal class using the 
         public "access specifier". This relationship is established through the line class Dog : public Animal.
 
-        Encapsulation: Encapsulation is the mechanism of bundling data and methods that operate on that 
+        Encapsulation: 
+        Encapsulation is the mechanism of bundling data and methods that operate on that 
         data within a class, hiding the internal implementation details and providing controlled access to 
         the data. In the given code, encapsulation is achieved as follows:
         The member variables name in the Animal class and dog in the Person class are declared as protected 
@@ -153,7 +155,8 @@ int main() {
         (introduce() and walkDog()) in the Person class. This encapsulation ensures that the internal data is 
         accessed and modified in a controlled manner, preserving data integrity and providing a level of abstraction.
 
-        Abstraction: Abstraction is the process of hiding the complex implementation details and exposing only
+        Abstraction: 
+        Abstraction is the process of hiding the complex implementation details and exposing only
         the essential features or behavior to the outside world. In the given code, abstraction is achieved 
         through the use of an abstract base class:
         The Animal class is an abstract base class that defines a pure virtual function makeSound(). 
@@ -169,7 +172,8 @@ int main() {
         The virtual functions play a crucial role in achieving polymorphism and dynamic dispatch, 
         which are essential concepts in object-oriented programming.
 
-        Polymorphism: Polymorphism allows objects of different classes to be treated as objects of a 
+        Polymorphism: 
+        Polymorphism allows objects of different classes to be treated as objects of a 
         common base class, enabling code reuse and flexibility. In the code, the Animal class has a 
         pure virtual function makeSound(), which makes it an abstract base class. The Dog class derives 
         from Animal and overrides the makeSound() function. By marking the makeSound() function as virtual 
@@ -177,7 +181,8 @@ int main() {
         This allows objects of Dog to be treated as objects of Animal, providing a uniform interface 
         for different types of animals.
 
-        Dynamic Dispatch: Dynamic dispatch enables the selection of the appropriate function implementation 
+        Dynamic Dispatch: 
+        Dynamic dispatch enables the selection of the appropriate function implementation 
         at runtime based on the actual object type rather than the declared type. In the code, the 
         makeSound() function is declared as virtual in the Animal class and overridden in the Dog class. 
         When a derived class object is accessed through a pointer or reference to the base class 
@@ -185,7 +190,34 @@ int main() {
         virtual function is called based on the actual object type. This allows for runtime polymorphism, where 
         the appropriate makeSound() function of the specific animal type (e.g., Dog in this case) is invoked.
 
-        Composition: Composition represents a "has-a" relationship, where a class contains objects of other
+        Data Abstraction:
+        In the given example, data abstraction is achieved through the use of classes and member functions. 
+        The Animal class acts as an abstract base class that provides a blueprint for deriving 
+        concrete animal classes. It contains a pure virtual function makeSound(), which defines 
+        an abstract behavior without providing an implementation. This abstracts the concept of 
+        making a sound for different types of animals.  By making makeSound() a pure virtual function, 
+        the Animal class becomes an abstract class, which cannot be instantiated directly. 
+        It serves as an abstraction that defines a common interface for all animal objects, 
+        hiding the specific implementation details of each animal's sound. This allows client code to 
+        interact with different animal objects using a common interface, without needing to know the 
+        specific details of each animal class.
+
+        Message Passing:
+        Message passing is a way of communication between objects in which objects communicate by 
+        sending messages to each other. In the given code, message passing is demonstrated through the 
+        interaction between objects. For example, when person.walkDog() is called, the walkDog() 
+        member function of the Person class is invoked. Inside this function, a message is passed 
+        to the dog object (which is a member of the Person class) by calling dog.makeSound(). This message 
+        triggers the makeSound() function of the Dog class, causing the dog to make a sound specific to 
+        it's type. Similarly, the Zoo class demonstrates message passing when the makeAnimalSounds() member 
+        function is called. This function sends a message to each Animal object in the animals vector by 
+        calling their makeSound() function. The specific implementation of makeSound() in each derived class 
+        is invoked based on the actual object type at runtime, achieving dynamic dispatch. In both cases, the 
+        message passing mechanism allows objects to interact with each other and trigger specific behaviors 
+        based on the type of the receiving object, promoting encapsulation and polymorphism in the code.
+
+        Composition: 
+        Composition represents a "has-a" relationship, where a class contains objects of other
         classes as member variables, and the lifetime of the contained objects is tightly coupled with the 
         containing object. In the code, the Person class demonstrates composition with the Dog class.
         Inside the Person class, there is a member variable dog of type Dog. This means that a Person object 
@@ -193,7 +225,8 @@ int main() {
         Person object. The Dog object is initialized in the Person constructor using the provided Dog object 
         as an argument. This demonstrates composition, where the Person class composes a Dog object.
 
-        Aggregation: Aggregation represents a "has-a" relationship as well, where a class contains objects of 
+        Aggregation: 
+        Aggregation represents a "has-a" relationship as well, where a class contains objects of 
         other classes as member variables, but the lifetime of the contained objects is independent of the 
         containing object. In the code, the Zoo class demonstrates aggregation with the Animal class.
         Inside the Zoo class, there is a vector animals of type const Animal*. This vector holds pointers to 
@@ -201,7 +234,8 @@ int main() {
         those Animal objects. It is an aggregation because the Zoo class holds a collection of Animal objects,
         but the lifetime of the Animal objects is managed externally.
 
-        Association: Association is a relationship between two classes where an object of one class is 
+        Association: 
+        Association is a relationship between two classes where an object of one class is 
         related to objects of another class. It represents a "has-a" relationship.
         There is an example of association between the Person class and the Dog class. 
         In the Person class, there is a private member variable dog of type const Dog&, 
@@ -252,5 +286,7 @@ int main() {
         Zoo class. Therefore, in this case, it is not necessary to provide a destructor explicitly for the 
         Zoo class. The compiler-generated default destructor will be sufficient to handle the destruction of 
         the Zoo object and its member variables.
+
+        Other concepts like overriding, overloading and access specifiers are also incorporated.
     */
 }
