@@ -2,90 +2,170 @@
     g++ -o object_oriented_concepts object_oriented_concepts.cpp
     ./object_oriented_concepts
 
-    Classes: A class is a blueprint or template for creating objects. It defines the properties (data members) and behaviors (member functions) that objects of the class will have.
+    Classes: A class is a blueprint or template for creating objects. It defines the properties 
+    (data members) and behaviors (member functions) that objects of the class will have.
 
-    Objects: An object is an instance of a class. It represents a specific occurrence of the class and has its own set of data members and member functions.
+    Objects: An object is an instance of a class. It represents a specific occurrence of the class and 
+    has its own set of data members and member functions.
 
-    Encapsulation: Encapsulation is the process of hiding the internal details of an object and providing an interface to interact with the object. It combines data and functions into a single unit (class) and restricts access to the internal implementation details.
+    Encapsulation: Encapsulation is the process of hiding the internal details of an object and 
+    providing an interface to interact with the object. It combines data and functions into a 
+    single unit (class) and restricts access to the internal implementation details.
 
-    Abstraction: Abstraction involves simplifying complex systems by providing only essential details to the outside world. It focuses on the behavior of objects rather than their implementation. In C++, abstraction is achieved through classes and abstract data types.
+    Abstraction: Abstraction involves simplifying complex systems by providing only essential details to 
+    the outside world. It focuses on the behavior of objects rather than their implementation. 
+    In C++, abstraction is achieved through classes and abstract data types.
 
-    Inheritance: Inheritance allows you to create new classes (derived classes) based on existing classes (base classes). The derived classes inherit the properties and behaviors of the base class, allowing code reuse and specialization. C++ supports single and multiple inheritance.
+    Inheritance: Inheritance allows you to create new classes (derived classes) based on existing 
+    classes (base classes). The derived classes inherit the properties and behaviors of the base class, 
+    allowing code reuse and specialization. C++ supports single and multiple inheritance.
 
-    Polymorphism: Polymorphism means the ability of objects to take on many forms. It allows you to use a single interface to represent different types of objects. C++ supports two types of polymorphism: compile-time (function overloading) and runtime (function overriding using virtual functions).
+    Polymorphism: Polymorphism means the ability of objects to take on many forms. 
+    It allows you to use a single interface to represent different types of objects. 
+    C++ supports two types of polymorphism: compile-time (function overloading) and 
+    runtime (function overriding using virtual functions).
 
-    Overloading: Function overloading allows you to have multiple functions with the same name but different parameter lists. The appropriate function is selected based on the number and types of arguments provided.
+    Overloading: Function overloading allows you to have multiple functions with the same name but 
+    different parameter lists. The appropriate function is selected based on the number and 
+    types of arguments provided.
 
-    Overriding: Function overriding occurs when a derived class provides its own implementation of a member function that is already defined in the base class. It allows objects of the derived class to be treated as objects of the base class but with specialized behavior.
+    Overriding: Function overriding occurs when a derived class provides its own implementation of a 
+    member function that is already defined in the base class. It allows objects of the derived class 
+    to be treated as objects of the base class but with specialized behavior.
 
-    Polymorphic (virtual) functions: Virtual functions are functions declared in the base class and overridden in derived classes. They allow the correct function to be called based on the actual type of the object, rather than the type of the pointer or reference used to access it. Virtual functions enable runtime polymorphism.
+    Polymorphic (virtual) functions: Virtual functions are functions declared in the base class and 
+    overridden in derived classes. They allow the correct function to be called based on the actual type 
+    of the object, rather than the type of the pointer or reference used to access it. 
+    Virtual functions enable runtime polymorphism.
 
-    Data abstraction: Data abstraction involves the separation of the logical properties of an object from its concrete implementation. It allows you to define abstract data types (ADTs) that provide a high-level view of data and operations without exposing implementation details.
+    Data abstraction: Data abstraction involves the separation of the logical properties of an object from 
+    its concrete implementation. It allows you to define abstract data types (ADTs) 
+    that provide a high-level view of data and operations without exposing implementation details.
 
-    Message passing: In OOP, objects communicate with each other by sending and receiving messages. A message is a request for an object to perform a certain operation. The object that receives the message determines which method to execute based on the message content.
+    Message passing: In OOP, objects communicate with each other by sending and receiving messages. 
+    A message is a request for an object to perform a certain operation. The object that receives 
+    the message determines which method to execute based on the message content.
 
     Access Specifiers:
-    Access specifiers in C++ determine the accessibility or visibility of class members (data members and member functions) from different parts of the program. C++ provides three access specifiers:
+    Access specifiers in C++ determine the accessibility or visibility of class members 
+    (data members and member functions) from different parts of the program. 
+    C++ provides three access specifiers:
 
-    Public: Members declared as public are accessible from anywhere in the program. They can be accessed by objects of the class, as well as from outside the class.
+    Public: Members declared as public are accessible from anywhere in the program. 
+    They can be accessed by objects of the class, as well as from outside the class.
 
-    Private: Members declared as private are only accessible within the class itself. They cannot be accessed directly by objects of the class or from outside the class. Private members are typically accessed through public member functions (getters and setters) or friend functions.
+    Private: Members declared as private are only accessible within the class itself. 
+    They cannot be accessed directly by objects of the class or from outside the class. 
+    Private members are typically accessed through public member functions (getters and setters) or 
+    friend functions.
 
-    Protected: Members declared as protected are similar to private members but have one difference: they are accessible in derived classes. Derived classes can access protected members inherited from the base class.
+    Protected: Members declared as protected are similar to private members but have one difference: they are 
+    accessible in derived classes. Derived classes can access protected members inherited from the base class.
 
-    Access specifiers provide encapsulation and control over the accessibility of class members, allowing you to enforce data hiding and ensure proper encapsulation.
+    Access specifiers provide encapsulation and control over the accessibility of class members, 
+    allowing you to enforce data hiding and ensure proper encapsulation.
 
     Constructors and Destructors:
-    Constructors and destructors are special member functions in a class that are responsible for initializing and destroying objects, respectively.
+    Constructors and destructors are special member functions in a class that are responsible for 
+    initializing and destroying objects, respectively.
 
-    Constructors: Constructors are called when an object of a class is created. They have the same name as the class and do not have a return type (not even void). Constructors can be overloaded to provide different ways of initializing objects. They are often used to set initial values to data members or allocate resources.
+    Constructors: Constructors are called when an object of a class is created. They have the same name 
+    as the class and do not have a return type (not even void). Constructors can be overloaded to 
+    provide different ways of initializing objects. They are often used to set initial values to data members 
+    or allocate resources.
 
-    Destructors: Destructors are called when an object goes out of scope or is explicitly deleted using the delete keyword. They have the same name as the class preceded by a tilde (~). Destructors are mainly used to release resources acquired by the object during its lifetime, such as freeing memory or closing file handles.
+    Destructors: Destructors are called when an object goes out of scope or is explicitly deleted using the 
+    delete keyword. They have the same name as the class preceded by a tilde (~). Destructors are mainly 
+    used to release resources acquired by the object during its lifetime, such as freeing memory or closing 
+    file handles.
 
     Aggregation and Composition:
     Aggregation and composition are two forms of relationships between classes in object-oriented programming.
 
-    Aggregation: Aggregation represents a "has-a" relationship between classes, where one class is composed of one or more instances of another class. The aggregated objects can exist independently, and the relationship is typically represented by a member variable in the containing class. For example, a car class may have a member variable of type Engine.
+    Aggregation: Aggregation represents a "has-a" relationship between classes, 
+    where one class is composed of one or more instances of another class. 
+    The aggregated objects can exist independently, and the relationship is typically represented by a 
+    member variable in the containing class. For example, a car class may have a member variable of 
+    type Engine.
 
-    Composition: Composition is a strong form of aggregation that represents a "whole-part" relationship between classes. In composition, the lifetime of the contained objects is tightly coupled with the containing object. The contained objects are created and destroyed along with the containing object. For example, a House class may have Room objects as its composition.
+    Composition: Composition is a strong form of aggregation that represents a "whole-part" 
+    relationship between classes. In composition, the lifetime of the contained objects is tightly 
+    coupled with the containing object. The contained objects are created and destroyed along with 
+    the containing object. For example, a House class may have Room objects as its composition.
 
-    Association is a fundamental concept in OOP and is used to model relationships between objects. It allows classes to collaborate and exchange information, enabling the creation of complex systems by composing simpler classes together.
+    Association is a fundamental concept in OOP and is used to model relationships between objects. 
+    It allows classes to collaborate and exchange information, enabling the creation of complex systems by 
+    composing simpler classes together.
 
     Key characteristics of association in OOP include:
 
-    Relationship: Association represents a relationship between two or more classes. It defines that objects of one class are connected to objects of another class.
+    Relationship: Association represents a relationship between two or more classes. 
+    It defines that objects of one class are connected to objects of another class.
 
-    Multiplicity: Multiplicity specifies the number of objects involved in the association. It can be one-to-one, one-to-many, many-to-one, or many-to-many, indicating the cardinality of the association.
+    Multiplicity: Multiplicity specifies the number of objects involved in the association. 
+    It can be one-to-one, one-to-many, many-to-one, or many-to-many, indicating the cardinality 
+    of the association.
 
-    Directionality: Association can be unidirectional or bidirectional. In a unidirectional association, objects of one class are aware of the other class, but not vice versa. In a bidirectional association, objects of both classes are aware of each other.
+    Directionality: Association can be unidirectional or bidirectional. In a unidirectional association, 
+    objects of one class are aware of the other class, but not vice versa. In a bidirectional association, 
+    objects of both classes are aware of each other.
 
-    Navigation: Navigation refers to the ability to traverse an association from one object to another. It allows accessing the associated objects and invoking their methods.
+    Navigation: Navigation refers to the ability to traverse an association from one object to another. 
+    It allows accessing the associated objects and invoking their methods.
 
-    Association Role: Each class involved in the association plays a role, which represents its participation in the relationship. The role describes the purpose or responsibility of the class in the context of the association.
+    Association Role: Each class involved in the association plays a role, which represents its 
+    participation in the relationship. The role describes the purpose or responsibility of the class 
+    in the context of the association.
 
-    Dependency: Associations can create dependencies between classes. Changes in one class may affect the behavior or state of the other class, leading to a dependency between them.
+    Dependency: Associations can create dependencies between classes. Changes in one class may affect 
+    the behavior or state of the other class, leading to a dependency between them.
 
-    Associations can be represented in UML (Unified Modeling Language) diagrams using various notations, such as solid lines with arrows, multiplicity indicators, and role names.
+    Associations can be represented in UML (Unified Modeling Language) diagrams using various notations, 
+    such as solid lines with arrows, multiplicity indicators, and role names.
 
-    Dynamic dispatch, also known as dynamic binding or late binding, is a mechanism in object-oriented programming (OOP) that allows the selection of the appropriate function implementation at runtime based on the actual object type rather than the declared type. It enables polymorphism and is a fundamental concept in OOP languages.
+    Dynamic dispatch, also known as dynamic binding or late binding, is a mechanism in 
+    object-oriented programming (OOP) that allows the selection of the appropriate function implementation 
+    at runtime based on the actual object type rather than the declared type. It enables polymorphism and 
+    is a fundamental concept in OOP languages.
 
-    In OOP, objects are instances of classes, and classes can have hierarchies through inheritance. Dynamic dispatch is primarily associated with polymorphism, where objects of different classes can be treated as objects of a common base class. It allows the code to be written in a more generic and flexible way, without being aware of the specific subclass types.
+    In OOP, objects are instances of classes, and classes can have hierarchies through inheritance. 
+    Dynamic dispatch is primarily associated with polymorphism, where objects of different classes 
+    can be treated as objects of a common base class. It allows the code to be written in a more generic
+     and flexible way, without being aware of the specific subclass types.
 
     Here's how dynamic dispatch works:
 
-    Inheritance and Overriding: In a class hierarchy, a derived class can override a method from its base class. When a method is declared as "virtual" in the base class and overridden in a derived class, it indicates that the method's implementation can vary based on the actual object type.
+    Inheritance and Overriding: In a class hierarchy, a derived class can override a method from 
+    its base class. When a method is declared as "virtual" in the base class and overridden in a 
+    derived class, it indicates that the method's implementation can vary based on the actual object type.
 
-    Virtual Function Table (VTable): To support dynamic dispatch, most OOP languages use a mechanism called the virtual function table or VTable. It is a data structure associated with each class that contains pointers to its virtual functions.
+    Virtual Function Table (VTable): To support dynamic dispatch, most OOP languages use a mechanism 
+    called the virtual function table or VTable. It is a data structure associated with each class that 
+    contains pointers to its virtual functions.
 
-    Object Pointers and References: When a derived class object is accessed through a pointer or reference to the base class, dynamic dispatch comes into play. The compiler treats the pointer or reference as the base class type but keeps track of the actual object type at runtime.
+    Object Pointers and References: When a derived class object is accessed through a pointer or reference 
+    to the base class, dynamic dispatch comes into play. The compiler treats the pointer or reference as 
+    the base class type but keeps track of the actual object type at runtime.
 
-    Runtime Polymorphism: When a virtual function is called through a base class pointer or reference, dynamic dispatch determines which implementation of the function to invoke based on the actual object type. It looks up the appropriate function pointer in the VTable associated with the object's class and calls the corresponding implementation.
+    Runtime Polymorphism: When a virtual function is called through a base class pointer or reference, 
+    dynamic dispatch determines which implementation of the function to invoke based on the actual object type. 
+    It looks up the appropriate function pointer in the VTable associated with the object's class and 
+    calls the corresponding implementation.
 
-    By using dynamic dispatch, the correct implementation of a virtual function is selected at runtime, allowing objects of different classes to respond appropriately to the same method invocation. This enables polymorphism and facilitates code reuse, as a common interface can be defined in the base class, and derived classes can provide specialized implementations.
+    By using dynamic dispatch, the correct implementation of a virtual function is selected at runtime, 
+    allowing objects of different classes to respond appropriately to the same method invocation. 
+    This enables polymorphism and facilitates code reuse, as a common interface can be defined in the 
+    base class, and derived classes can provide specialized implementations.
 
-    Dynamic dispatch is crucial for achieving the Open-Closed Principle (OCP) in OOP, which states that classes should be open for extension but closed for modification. It allows new classes to be added to the system without modifying existing code, as long as they conform to the common interface defined by the base class.
+    Dynamic dispatch is crucial for achieving the Open-Closed Principle (OCP) in OOP, which states 
+    that classes should be open for extension but closed for modification. It allows new classes to be 
+    added to the system without modifying existing code, as long as they conform to the common interface
+    defined by the base class.
 
-    Overall, dynamic dispatch is a key mechanism in OOP that enables runtime polymorphism, flexibility, and extensibility in object-oriented systems. It allows objects to be treated generically, while their specific behaviors are determined based on their actual types at runtime.
+    Overall, dynamic dispatch is a key mechanism in OOP that enables 
+    runtime polymorphism, flexibility, and extensibility in object-oriented systems. 
+    It allows objects to be treated generically, while their specific behaviors are determined based on 
+    their actual types at runtime.
 */
 
 
