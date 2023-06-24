@@ -241,5 +241,16 @@ int main() {
         handled when it goes out of scope or when explicitly deleted. Since the Person class does not 
         require any additional cleanup beyond what is automatically handled for it's member variables, it 
         does not need a destructor. The compiler-generated default destructor will be sufficient in this case.
+        Similarly, the Zoo class does not require a destructor to be explicitly defined. The reason is that 
+        the Zoo class does not have any member variables that require explicit cleanup or deallocation.
+        The Zoo class contains a vector of pointers to const Animal objects (std::vector<const Animal*> animals),
+        but it does not own or manage the lifetime of these objects. It is assumed that the responsibility 
+        for creating and destroying the Animal objects lies outside the Zoo class. When the Zoo object goes 
+        out of scope or is explicitly deleted, the vector animals will be automatically destroyed, and the 
+        destructors of the Animal objects, if any, will be called. The destruction of the Animal objects 
+        should be handled by the code that created those objects, and it is not the responsibility of the 
+        Zoo class. Therefore, in this case, it is not necessary to provide a destructor explicitly for the 
+        Zoo class. The compiler-generated default destructor will be sufficient to handle the destruction of 
+        the Zoo object and its member variables.
     */
 }
