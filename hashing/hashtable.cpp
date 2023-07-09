@@ -3,6 +3,14 @@
     ./hashtable
 
     Hashtable internals: https://www.youtube.com/playlist?list=PLsdq-3Z1EPT2UnueESBLReaVSLIo_BuAc
+
+    |- Collision Resolution
+        |- Load factor for when to resize and Growth factor for how to resize
+            |- External Chaining
+            |- Open Addressing
+                |- Linear Probing
+                |- Quadric Probing
+                |- Double Hashing
 */
 
 #include <iostream>
