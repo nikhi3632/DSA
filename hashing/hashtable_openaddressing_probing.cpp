@@ -131,7 +131,7 @@ int main() {
     int initialSize = 10;
     float loadFactorThreshold = 0.75;
     int growthFactorValue = 2;
-    ProbingTechnique technique = LinearProbing;
+    ProbingTechnique technique = DoubleHashing;
 
     HashTable hashTable(initialSize, loadFactorThreshold, growthFactorValue, technique);
 
