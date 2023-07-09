@@ -1,3 +1,8 @@
+/*
+    g++ -std=c++11 -o inbuilt_map inbuilt_map.cpp
+    ./inbuilt_map
+*/
+
 #include <iostream>
 #include <map>
 
