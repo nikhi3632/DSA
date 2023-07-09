@@ -1,6 +1,8 @@
 /*
     g++ -std=c++11 -o hashtable hashtable.cpp
     ./hashtable
+
+    Hashtable internals: https://www.youtube.com/playlist?list=PLsdq-3Z1EPT2UnueESBLReaVSLIo_BuAc
 */
 
 #include <iostream>
