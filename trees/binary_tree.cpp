@@ -118,11 +118,11 @@ int main() {
 
     // Set root and connect nodes
     binaryTree.setRoot(node1);
-    binaryTree.setLeft(node1, node2);
-    binaryTree.setRight(node1, node3);
-    binaryTree.setLeft(node2, node4);
-    binaryTree.setLeft(node3, node5);
-    binaryTree.setRight(node3, node6);
+    binaryTree.setRight(node1, node2);
+    binaryTree.setLeft(node1, node3);
+    binaryTree.setLeft(node3, node4);
+    binaryTree.setLeft(node2, node5);
+    binaryTree.setRight(node2, node6);
 
     /*
                 1
@@ -130,22 +130,22 @@ int main() {
               /    \
              /      \
             /        \
-           2          3
+           3          2
           / \       /   \
          4   NULL   5    6
     */
 
 
     // Perform preorder traversal
-    std::cout << "Preorder traversal: ";
+    std::cout << "Preorder traversal: "; // 1 3 4 2 5 6
     binaryTree.preorderTraversal();
 
     // Perform inorder traversal
-    std::cout << "Inorder traversal: ";
+    std::cout << "Inorder traversal: "; // 4 3 1 5 2 6
     binaryTree.inorderTraversal();
 
     // Perform postorder traversal
-    std::cout << "Postorder traversal: ";
+    std::cout << "Postorder traversal: "; // 4 3 5 6 2 1
     binaryTree.postorderTraversal();
 
     return 0;

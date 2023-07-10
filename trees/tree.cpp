@@ -114,15 +114,15 @@ int main() {
 
     */
 
-    std::cout << "Preorder traversal: ";
+    std::cout << "Preorder traversal: "; // 1 2 5 6 3 4
     tree.traversePreorder(tree.getRoot());
     std::cout << std::endl;
 
-    std::cout << "Postorder traversal: ";
+    std::cout << "Postorder traversal: "; // 5 6 2 3 4 1
     tree.traversePostorder(tree.getRoot());
     std::cout << std::endl;
 
-    std::cout << "Level-order traversal: ";
+    std::cout << "Level-order traversal: "; // 1 2 3 4 5 6
     tree.traverseLevelOrder(tree.getRoot());
     std::cout << std::endl;
 

@@ -112,15 +112,15 @@ int main() {
        20 40  60 80
     */
 
-    std::cout << "Pre-order traversal: ";
+    std::cout << "Pre-order traversal: "; // 50 30 20 40 70 60 80
     bst.preOrderTraversal(bst.getRoot());
     std::cout << std::endl;
 
-    std::cout << "Post-order traversal: ";
+    std::cout << "Post-order traversal: "; // 20 40 30 60 80 70 50
     bst.postOrderTraversal(bst.getRoot());
     std::cout << std::endl;
 
-    std::cout << "Level-order traversal: ";
+    std::cout << "Level-order traversal: "; // 50 30 70 20 40 60 80
     bst.levelOrderTraversal(bst.getRoot());
     std::cout << std::endl;
 
