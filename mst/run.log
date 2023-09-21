@@ -1,0 +1,12 @@
+Original Graph...
+A: B, C
+B: A, C, D
+C: A, B, D, E
+D: B, C, E
+E: C, D
+
+Prim's Minimum Spanning Tree:
+[('A', 'B', {'weight': 2.0}), ('B', 'C', {'weight': 2.0}), ('C', 'D', {'weight': 3.0}), ('D', 'E', {'weight': 3.0})]
+
+Kruskal's Minimum Spanning Tree:
+[('A', 'B', {'weight': 2.0}), ('A', 'C', {'weight': 2.0}), ('B', 'D', {'weight': 3.0}), ('D', 'E', {'weight': 3.0})]
