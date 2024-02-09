@@ -1,6 +1,6 @@
 /*
-    g++ -std=c++11 -o hashset_hashmap hashset_hashmap.cpp
-    ./hashset_hashmap
+    g++ -std=c++11 -o hashtable_map_set hashtable_map_set.cpp
+    ./hashtable_map_set
     The HashMap class implements a basic key-value mapping using a hash table.
     The HashSet class implements a simple set data structure using a hash table.
 */
