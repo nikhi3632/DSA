@@ -15,8 +15,11 @@ void insertion_sort(std::vector<int>&vec)
     {
         int hole = i;
         int val = vec[i];
-
-        while(hole > 0 && val < vec[hole-1])
+        /*
+            To insert val into the hole of the sorted part, shift all numbers
+            greater than val in the sorted part by one position to the right.
+        */
+        while(hole > 0 && vec[hole-1] > val)
         {
             vec[hole] = vec[hole-1];
             hole = hole - 1;
