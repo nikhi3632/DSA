@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import networkx as nx
+import collections
 
 class Graph:
     def __init__(self):
@@ -31,27 +32,33 @@ class Graph:
         plt.savefig(filename, format='png')
         print(f"Graph saved as {filename}")
     
-    def dfs(self, start, visited=None):
-        visited = set()
-        stack = [start]
-        while stack:
-            node = stack.pop()   
-            if node not in visited:
-                visited.add(node)
-                print(node, end=' ')
-                for neighbor in reversed(self.graph.get(node, [])):
-                    if neighbor not in visited:
-                        stack.append(neighbor)
-    
+    def dfs(self, start):
+            """DFS follows the LIFO principle (process the most recently added node first)."""
+            visited = set()
+            stack = [start]
+
+            while stack:
+                node = stack.pop()
+                if node not in visited:
+                    print(node, end=' ')
+                    visited.add(node)
+                    for neighbor in reversed(self.graph.get(node, [])):
+                        if neighbor not in visited:
+                            stack.append(neighbor)
+
     def bfs(self, start):
+        """BFS follows the FIFO principle (process nodes in the order they are discovered)."""
         visited = set()
-        queue = [start]
+        queue = collections.deque([start])  # Using deque for O(1) popleft()
+
         while queue:
-            vertex = queue.pop(0)
-            if vertex not in visited:
-                print(vertex, end=' ')
-                visited.add(vertex)
-                queue.extend(neighbor for neighbor in self.graph.get(vertex, []) if neighbor not in visited)
+            node = queue.popleft()
+            if node not in visited:
+                print(node, end=' ')
+                visited.add(node)
+                for neighbor in self.graph.get(node, []):
+                    if neighbor not in visited:
+                        queue.append(neighbor)
 
 if __name__ == "__main__":
     g = Graph()
